@@ -1,0 +1,175 @@
+$theme-color: #7B55E8;
+
+#issue-page{
+
+    .project-name{
+        height: 50px;
+        width: 300px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid $theme-color;
+        padding: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #000;
+        animation-name: example;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes example{
+        0%{
+            transform: rotate(0deg);
+        }
+        20%{
+            transform: rotate(10deg);
+        }
+        40%{
+            transform: rotate(0deg);
+        }
+        60%{
+            transform: rotate(-10deg);
+        }
+    }
+
+    .search{
+        input{
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid $theme-color;
+            border-radius: 4px;
+            background-color: white;
+            height: 40px;
+            width: 200px;
+            overflow: auto;
+            color: black;
+            text-align: left;
+            outline: none;
+        }
+    }
+
+    .filter{
+        display: flex;
+        justify-content: center;
+        .issue-labels{
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: flex-start;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid $theme-color;
+            margin-bottom: 10px;
+            width: 200px;
+            font-size: 0.8em;
+            font-weight: 300;
+            color: #000;
+        }
+    }
+
+    .issue-list-and-form{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .create-new-issue-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid $theme-color;
+        padding: 10px;
+        margin: 20px;
+        width: 20%;
+        height: 60%;
+        .issue-labels{
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: flex-start;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid $theme-color;
+            margin-bottom: 10px;
+            width: 200px;
+            font-size: 0.8em;
+            font-weight: 300;
+            color: #000;
+        }
+        .input-for-create-issue input{
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid $theme-color;
+            border-radius: 4px;
+            background-color: white;
+            height: 40px;
+            width: 200px;
+            overflow: auto;
+            color: black;
+            text-align: left;
+            outline: none;
+        }
+ 
+    }
+
+    .issue-list{
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid $theme-color;
+        border-radius: 4px;
+        background-color: white;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        height: 70vh;
+        width: 60%;
+        overflow: scroll;
+
+        .search-and-filter{
+            display: flex;
+            justify-content: space-around;
+        }
+        .issue-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid $theme-color;
+            background-color: $theme-color;
+            border-radius: 4px;
+            box-shadow: -1px -1px 5px 9px rgba(197,206,235,1);
+            height: 120px;
+            overflow: auto;
+            color: white;
+            text-align: left;
+        }
+    }
+
+    .issue-card:hover{
+        transition: ease-in-out 0.9s;
+        transform: rotate(1deg);
+        translate: 10px;
+    }
+
+    button{
+        height: 38px;
+        width: 100px;
+        margin: 15px;
+        padding: 3px;
+        border: 1px solid $theme-color;
+        border-radius: 4px;
+        outline: none;
+        font-size: 14px;
+        background-color: $theme-color;
+        color: white;
+        cursor: pointer;
+    }
+    button:hover{
+        transition: ease-in-out 0.2s;
+        transform: scale(1.1);
+    }   
+}

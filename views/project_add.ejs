@@ -1,0 +1,38 @@
+<div class="new-project">
+  
+<div class="project-add-form">
+  <form action="/projects/create" method="post">
+<div>
+  <input type="text" name="name" placeholder="Enter your name" required />
+</div> 
+<div>
+  <input type="text" name="desc" placeholder="Enter Description" required />
+</div>   
+    <div>
+      <input type="text" name="author" placeholder="Enter Name of Author" required />
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<div class="project-list"style={ height: 70vh} >
+
+  <% for(let proj of projects){ %>
+      <div class="project-card">
+        <div  class="card-detailed">
+          <div><%= proj.name %></div>
+        <div><%= proj.desc %></div>
+        <div><%= proj.author %></div>
+        <div><%= proj.createdAt %></div>
+        </div>
+     <div class="open-project-page">
+      <a href="/projects/issue/<%=proj._id%>" class="btn btn-primary m-auto"
+        >Open project</a
+      >
+     </div>
+      </div>
+    <% }%>
+
+</div>
+
+</div>

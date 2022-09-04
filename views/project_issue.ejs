@@ -1,0 +1,202 @@
+<div id="issue-page">
+  <div class="project-name"><%= project.name %> <%= project.author %></div>
+
+
+
+
+  <div class="issue-list-and-form">
+    <div class="create-new-issue-form">
+      <form action="/projects/create-issue/<%= project._id %>" method="post">
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <div class="input-for-create-issue">
+            <input
+              type="text"
+              name="title"
+              placeholder="Enter Title"
+              required
+            />
+          </div>
+          <div class="input-for-create-issue">
+            <input
+              type="text"
+              name="description"
+              placeholder="Enter issue description"
+              required
+            />
+          </div>
+
+          <div class="input-for-create-issue">
+            <input
+              type="text"
+              name="author"
+              placeholder="Enter Title"
+              required
+            />
+          </div>
+          <input type="hidden" name="project_id" value="<%= project._id %>" />
+          <div class="issue-labels">
+            <div>
+              <input
+                class="form-check-input"
+                name="labels"
+                type="checkbox"
+                value="Bug"
+                id="bug"
+              />
+              <label class="form-check-label" for="bug"> Bug </label><br />
+            </div>
+            <div>
+              <input
+                name="labels"
+                class="form-check-input"
+                type="checkbox"
+                value="UI Improvement"
+                id="ui-improvement"
+              />
+              <label class="form-check-label" for="ui-improvement">
+                UI Improvement
+              </label>
+            </div>
+            <div>
+              <input
+                name="labels"
+                class="form-check-input"
+                type="checkbox"
+                value="Documentation"
+                id="documentation"
+              />
+              <label class="form-check-label" for="documentation">
+                Documentation
+              </label>
+            </div>
+            <div>
+              <input
+                name="labels"
+                class="form-check-input"
+                type="checkbox"
+                value="Enhancement"
+                id="enhancement"
+              />
+              <label class="form-check-label" for="enhancement">
+                Enhancement
+              </label>
+            </div>
+            <div>
+              <input
+                name="labels"
+                class="form-check-input"
+                type="checkbox"
+                value="Duplicate"
+                id="duplicate"
+              />
+              <label class="form-check-label" for="duplicate">
+                Duplicate
+              </label>
+            </div>
+          </div>
+          <button type="submit">Create New Issue</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="issue-list">
+     <div class="search-and-filter">
+      <div class="search">
+        <form action="/projects/search/<%= project._id %>" method="get">
+          <input type="text" name="search" placeholder="search" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <div class="filter">
+        <form action="/projects/filter/<%= project._id %>" method="get">
+          <div class="issue-labels">
+            <div >
+              <input
+                class="form-check-input"
+                name="labels"
+                type="checkbox"
+                value="Bug"
+                id="bug"
+              />
+              <label class="form-check-label" for="bug"> Bug </label><br />
+            </div>
+            <div>
+              <input
+                name="labels"
+                class="form-check-input"
+                type="checkbox"
+                value="UI Improvement"
+                id="ui-improvement"
+              />
+              <label class="form-check-label" for="ui-improvement">
+                UI Improvement
+              </label>
+            </div>
+            <div>
+              <input
+                name="labels"
+                class="form-check-input"
+                type="checkbox"
+                value="Documentation"
+                id="documentation"
+              />
+              <label class="form-check-label" for="documentation">
+                Documentation
+              </label>
+            </div>
+            <div>
+              <input
+                name="labels"
+                class="form-check-input"
+                type="checkbox"
+                value="Enhancement"
+                id="enhancement"
+              />
+              <label class="form-check-label" for="enhancement"> Enhancement </label>
+            </div>
+            <div>
+              <input
+                name="labels"
+                class="form-check-input"
+                type="checkbox"
+                value="Duplicate"
+                id="duplicate"
+              />
+              <label class="form-check-label" for="duplicate"> Duplicate </label>
+            </div>
+          </div>
+          <button type="submit">Filter</button>
+        </form>
+      </div>
+     </div>
+    
+
+
+      <% for(let issue of issues){ %>
+      <div class="issue-card">
+
+        <div style="border: 2px solid grey">
+          Issue Title: <%= issue.title %>
+        </div>
+        <div style="border: 2px solid grey">
+          Issue Author: <%= issue.author %>
+        </div>
+        <div style="border: 2px solid grey">
+          Issue Description: <%= issue.description %>
+        </div>
+      </div>
+      <% }%>
+
+      <% if(issues.length == 0 ){%>
+        <div class="issue-card">
+
+          <div style="text-align: center; border: 2px solid grey; font-size: 24px;">
+            NO ISSUE FOUND 
+            CREATE NEW ISSUE
+          </div>
+        </div>
+        <%}%>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+.new-project {
+  display: flex;
+  justify-content: space-evenly; }
+  .new-project .project-add-form {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #7B55E8;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+    .new-project .project-add-form input {
+      height: 38px;
+      width: 300px;
+      margin: 10px;
+      padding: 3px;
+      border: 1px solid #7B55E8;
+      border-radius: 4px;
+      outline: none;
+      font-size: 14px;
+      color: gray; }
+    .new-project .project-add-form button {
+      height: 38px;
+      width: 100px;
+      margin: 15px;
+      padding: 3px;
+      border: 1px solid #7B55E8;
+      border-radius: 4px;
+      outline: none;
+      font-size: 14px;
+      background-color: #7B55E8;
+      color: white;
+      cursor: pointer; }
+    .new-project .project-add-form button:hover {
+      transition: ease-in-out 0.2s;
+      transform: scale(1.1); }
+  .new-project .project-list {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #7B55E8;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    height: 70vh;
+    overflow: scroll; }
+    .new-project .project-list .project-card {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: end;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #7B55E8;
+      background-color: #7B55E8;
+      border-radius: 4px;
+      box-shadow: -1px -1px 5px 9px #c5ceeb;
+      height: 120px;
+      overflow: auto;
+      color: white;
+      text-align: left; }
+      .new-project .project-list .project-card .card-detailed div {
+        margin-top: 14px; }
+      .new-project .project-list .project-card .open-project-page {
+        height: 34px;
+        width: 108px;
+        border-radius: 4px;
+        background-color: white;
+        color: #7B55E8;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .new-project .project-list .project-card .open-project-page a {
+          text-decoration: none; }
+    .new-project .project-list .project-card:hover {
+      transition: ease-in-out 0.8s;
+      transform: rotate(3deg);
+      translate: 10px; }
