@@ -14,10 +14,6 @@ module.exports.AddProject = function (req, res) {
       projects: projects,
     });
   });
-  // return res.render("project_add", {
-  //   title: "Project | Sign Up",
-  //   projects: [],
-  // });
 };
 
 // render the sign in page
