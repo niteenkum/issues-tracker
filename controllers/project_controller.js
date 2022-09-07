@@ -6,7 +6,7 @@ const Issue = require("../models/issue");
 module.exports.AddProject = function (req, res) {
   Project.find({}, function (err, projects) {
     if (err) {
-      console.log("Error in finding the user in sign up");
+      console.log("Error in finding the Projects", err);
       return;
     }
     return res.render("project_add", {
@@ -14,6 +14,10 @@ module.exports.AddProject = function (req, res) {
       projects: projects,
     });
   });
+  // return res.render("project_add", {
+  //   title: "Project | Sign Up",
+  //   projects: [],
+  // });
 };
 
 // render the sign in page

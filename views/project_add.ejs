@@ -3,7 +3,7 @@
 <div class="project-add-form">
   <form action="/projects/create" method="post">
 <div>
-  <input type="text" name="name" placeholder="Enter your name" required />
+  <input type="text" name="name" placeholder="Enter the project name" required />
 </div> 
 <div>
   <input type="text" name="desc" placeholder="Enter Description" required />
@@ -17,7 +17,8 @@
 
 <div class="project-list"style={ height: 70vh} >
 
-  <% for(let proj of projects){ %>
+  <% if(projects.length !== 0) {%>
+    <% for(let proj of projects){ %>
       <div class="project-card">
         <div  class="card-detailed">
           <div><%= proj.name %></div>
@@ -32,6 +33,7 @@
      </div>
       </div>
     <% }%>
+    <%}%>
 
 </div>
 
