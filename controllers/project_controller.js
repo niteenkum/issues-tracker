@@ -2,7 +2,7 @@ const Project = require("../models/project");
 const Issue = require("../models/issue");
 
 
-// render the sign up page
+// render the Add new project or show all project page
 module.exports.AddProject = function (req, res) {
   Project.find({}, function (err, projects) {
     if (err) {
@@ -29,7 +29,7 @@ module.exports.issue = function (req, res) {
         return;
       }
       return res.render("project_issue", {
-        title: "Project | Sign In",
+        title: "Project | Create",
         project: project,
         issues: issues,
       });

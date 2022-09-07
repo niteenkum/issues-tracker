@@ -2,11 +2,10 @@ require('dotenv').config();
 const express = require('express');
 // const cookieParser = require('cookie-parser');
 const app = express();
+// Running on server port or 8000
 const port = process.env.PORT || 8000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
-// Used for session cookie 
-// const session = require('express-session');
 
 // Used for scss
 
